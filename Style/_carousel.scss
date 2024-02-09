@@ -1,0 +1,144 @@
+.knives-container {
+  position: absolute;
+  left: 50%;
+  top: 150%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 85vh;
+  padding: 50px;
+  background-color: $primary-color;
+  box-shadow: 10px 10px 10px $text-black-color;
+
+  @media (max-width: $lg) {
+    max-width: 80vw;
+    height: 80vh;
+  }
+}
+#slide {
+  width: max-content;
+  margin-top: 50px;
+}
+.item {
+  width: 200px;
+  height: 300px;
+  background-position: 50% 50%;
+  display: inline-block;
+  transition: 0.5s;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 1;
+  top: 70%;
+  transform: translate(-10%, -40%);
+  border-radius: 10px;
+  box-shadow: 0 5px 10px $text-black-color;
+
+  @media (max-width: $lg) {
+    transform: translate(-100%, 40%);
+    width: 100px;
+    height: 150px;
+    gap: 10px;
+    padding: -150px;
+  }
+}
+.item:nth-child(1),
+.item:nth-child(2) {
+  left: 0;
+  top: 0;
+  transform: translate(0, 0);
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+}
+.item:nth-child(3) {
+  left: 50%;
+}
+.item:nth-child(4) {
+  left: calc(50% + 220px);
+}
+.item:nth-child(5) {
+  left: calc(50% + 440px);
+}
+.item:nth-child(n + 6) {
+  left: calc(50% + 660px);
+  opacity: 0;
+}
+.item .content {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  width: 300px;
+  text-align: left;
+  padding: 0;
+  color: $secondary-color;
+  transform: translate(0, -50%);
+  display: none;
+  font-family: system-ui;
+  background-color: $primary-color;
+  border-radius: 5px;
+  padding: 20px 40px;
+}
+.item:nth-child(2) .content {
+  display: block;
+  z-index: 11111;
+}
+.item .name {
+  font-size: 40px;
+  font-weight: bold;
+  opacity: 0;
+  animation: showcontent 1s ease-in-out 1 forwards;
+}
+.item .des {
+  margin: 20px 0;
+  opacity: 0;
+  animation: showcontent 1s ease-in-out 0.3s 1 forwards;
+}
+.item button {
+  padding: 10px 20px;
+  border: none;
+  opacity: 0;
+  animation: showcontent 1s ease-in-out 0.6s 1 forwards;
+  transition: 0.5s;
+  background-color: rgba($secondary-color, 0.7);
+  font-size: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+}
+@keyframes showcontent {
+  from {
+    opacity: 0;
+    transform: translate(0, 100px);
+    filter: blur(33px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+    filter: blur(0);
+  }
+}
+.buttons {
+  position: absolute;
+  bottom: 60px;
+  left: -30%;
+  z-index: 222222;
+  text-align: center;
+  width: 100%;
+}
+.buttons button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  transition: 0.5s;
+  background-color: rgba($secondary-color, 0.7);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.buttons button:hover {
+  background-color: $secondary-color;
+  transform: scale(1.1);
+}
