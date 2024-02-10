@@ -14,32 +14,41 @@ html {
 }
 
 h2 {
-  font-family: "Teko", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 500;
-  letter-spacing: 1px;
+  font-weight: 400;
   font-style: normal;
+  letter-spacing: 1px;
+  font-size: 2.5rem;
 }
 
 h3 {
-  font-family: "IBM Plex Sans", sans-serif;
-  font-weight: 500;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
   font-style: normal;
+  font-size: 1.5rem;
 }
 
 body {
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0.5px;
   color: $secondary-color;
   min-height: 100vh;
   overflow-x: hidden;
-  background-image: url(/Images/bcgound.jpg);
+  background-image: linear-gradient(0deg, $primary-color, $primary-color),
+    url(/Images/bcgound.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+// Scroll animation
+
+// Sections
 
 section {
   height: 100vh;
@@ -52,6 +61,7 @@ section {
     padding: 1.3rem 5%;
   }
 }
+
 .hero {
   background-image: linear-gradient(0deg, $primary-color, $primary-color),
     url(/Images/bg-damask.jpg);
@@ -68,27 +78,139 @@ section {
   & .hero-text {
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
 
     & h1 {
-      font-size: 6rem;
-      margin-bottom: 3rem;
+      font-size: 8rem;
+      margin-bottom: 1rem;
       font-family: "Teko", sans-serif;
       font-optical-sizing: auto;
       font-weight: 500;
       font-style: normal;
+      text-transform: uppercase;
+    }
+    & h2 {
+      margin-bottom: 1rem;
+    }
+
+    & .buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 130px);
+      grid-template-rows: 40px;
+      gap: 5px;
+      margin-top: 20px;
+
+      & button {
+        background: transparent;
+        color: $white;
+        border: 1px solid $white;
+        border-radius: 3px;
+        box-shadow: 1px 1px 2px $white;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.1);
+          transition: transform 0.3s ease;
+        }
+      }
     }
   }
 
   & .hero-logo {
     & img {
       height: 80vh;
+      transform: translateX(10%);
+      animation: fade-in linear;
+      animation-timeline: view();
+
       @media (max-width: $xl) {
         height: 40vw;
       }
       @media (max-width: $lg) {
         height: 60vh;
+      }
+    }
+  }
+}
+
+#about {
+  & h2 {
+    @include flexCenter();
+    @media (prefers-reduced-motion: no-preference) {
+      scale: 0.8;
+      opacity: 0;
+      animation: fade-in linear forwards;
+      animation-timeline: view();
+      animation-range-start: cover;
+      animation-range-end: 200px;
+    }
+  }
+  .about-main {
+    @include flexCenter();
+
+    & .about-content {
+      @media (prefers-reduced-motion: no-preference) {
+        scale: 0.8;
+        opacity: 0;
+        animation: fade-in linear forwards;
+        animation-timeline: view();
+        animation-range-start: cover;
+        animation-range-end: 400px;
+      }
+    }
+
+    & .grinder-vid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      & .video {
+        width: 40vw;
+        margin: 2rem;
+        transition: transform 1s ease-in-out;
+        @media (prefers-reduced-motion: no-preference) {
+          scale: 0.8;
+          opacity: 0;
+          animation: fade-in linear forwards;
+          animation-timeline: view();
+          animation-range-start: cover;
+          animation-range-end: 400px;
+        }
+
+        &:hover {
+          transform: scale(1.04);
+        }
+      }
+    }
+  }
+
+  & .buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 20px;
+
+    & button {
+      background: transparent;
+      color: $white;
+      border: 1px solid $white;
+      border-radius: 3px;
+      box-shadow: 1px 1px 2px $white;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        scale: 0.8;
+        opacity: 0;
+        animation: fade-in linear forwards;
+        animation-timeline: view();
+        animation-range-start: cover;
+        animation-range-end: 100px;
       }
     }
   }

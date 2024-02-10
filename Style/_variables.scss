@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Teko:wght@300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Teko:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Quicksand:wght@300..700&display=swap");
 
 $primary-color: rgba(22, 22, 22, 0.5);
 $text-black-color: rgb(22, 22, 22);
 $secondary-color: rgb(225, 128, 35);
+$white: rgb(225, 225, 225);
 
 $xs: 576px;
 $sm: 576px;
@@ -23,5 +26,12 @@ $xxl: 1400px;
     opacity: 1;
     filter: blur(0);
     transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  to {
+    scale: 1;
+    opacity: 1;
   }
 }
