@@ -35,3 +35,20 @@ $xxl: 1400px;
     opacity: 1;
   }
 }
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes header-image-animation {
+  25% {
+    opacity: 1;
+  }
+  85%,
+  100% {
+    opacity: 0;
+    scale: 2;
+  }
+}
