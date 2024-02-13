@@ -1,6 +1,8 @@
-const track = document.getElementById("slider");
+const track = document.querySelector("#slider");
 
-const handleOnDown = (e) => (track.dataset.mouseDownAt = e.clientX);
+const handleOnDown = (e) => {
+  track.dataset.mouseDownAt = e.clientX;
+};
 
 const handleOnUp = () => {
   track.dataset.mouseDownAt = "0";
@@ -10,12 +12,12 @@ const handleOnUp = () => {
 const handleOnMove = (e) => {
   if (track.dataset.mouseDownAt === "0") return;
 
-  const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-    maxDelta = window.innerWidth;
+  const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
+  const maxDelta = window.innerWidth;
 
-  const percentage = (mouseDelta / maxDelta) * -100,
-    nextPercUnconst = parseFloat(track.dataset.prevPercentage) + percentage,
-    nextPercentage = Math.max(Math.min(nextPercUnconst, 0), -70);
+  const percentage = (mouseDelta / maxDelta) * -100;
+  const nextPercUnconst = parseFloat(track.dataset.prevPercentage) + percentage;
+  const nextPercentage = Math.max(Math.min(nextPercUnconst, 0), -70);
 
   track.dataset.percentage = nextPercentage;
 
@@ -24,15 +26,15 @@ const handleOnMove = (e) => {
       transform: `translateX(${nextPercentage}%)`,
     },
     {
-      duration: 1200,
+      duration: 300,
       fill: "forwards",
     }
   );
 };
 
-window.onmousedown = (e) => handleOnDown(e);
+window.onmousedown = handleOnDown;
 window.ontouchstart = (e) => handleOnDown(e.touches[0]);
-window.onmouseup = (e) => handleOnUp(e);
+window.onmouseup = handleOnUp;
 window.ontouchend = (e) => handleOnUp(e.touches[0]);
-window.onmousemove = (e) => handleOnMove(e);
+window.onmousemove = handleOnMove;
 window.ontouchmove = (e) => handleOnMove(e.touches[0]);
