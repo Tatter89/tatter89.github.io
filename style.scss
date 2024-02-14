@@ -70,11 +70,11 @@ body {
 // Sections
 
 section {
-  min-height: 100vh;
-  width: 100vw;
+  /* min-height: 100vh;
+  width: 100vw; */
   padding: 3.3rem 10%;
   padding-top: 5rem;
-  margin: 10rem auto;
+  margin: 5rem auto;
 
   @media (max-width: 992px) {
     padding: 1.3rem 5%;
@@ -171,15 +171,10 @@ section {
     } */
 
 .about {
-  width: 80vw;
-  min-height: 90vh;
-  @include flexCenter();
-
   position: relative;
-  box-shadow: 5px 5px 10px 10px $text-black-color;
-  border-radius: 5px;
-
+  min-height: 100vh;
   & .social-media {
+    margin: 2rem 0;
     & a {
       color: $secondary-color;
       margin-right: 1rem;
@@ -223,20 +218,24 @@ section {
         & .about-title {
           font-size: 1.7rem;
         }
+
+        & h3 {
+          margin-right: 2rem;
+        }
         & strong {
           color: $secondary-color;
           font-family: "Oswald", sans-serif;
           font-optical-sizing: auto;
-          font-weight: 500;
+          font-weight: 600;
           font-style: normal;
           letter-spacing: 1px;
-          font-size: 2.6rem;
+          font-size: 3rem;
         }
       }
 
       & .about-pic {
         & img {
-          width: 20vw;
+          width: 25vw;
           margin: 2rem;
         }
       }
@@ -261,7 +260,7 @@ section {
       letter-spacing: 3px;
       cursor: pointer;
       padding: 0.7rem 1.5rem;
-      margin-top: 1rem;
+      margin: 1rem;
 
       &:hover {
         transform: scale(1.1);
@@ -271,12 +270,124 @@ section {
   }
 }
 
-.contact {
-  width: 80vw;
-  min-height: 90vh;
+#contact {
   @include flexCenter();
-
-  position: relative;
+  width: 80vw;
+  height: 90vh;
+  margin-top: 5rem;
   box-shadow: 5px 5px 10px 10px $text-black-color;
   border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+
+  & img {
+    position: absolute;
+    object-fit: cover;
+    z-index: -1;
+    width: 130%;
+    height: 130%;
+  }
+
+  & .email-container,
+  .contact-container {
+    width: 50%;
+    height: 100%;
+    background: rgba($primary-color, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & form {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 2rem;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 7px;
+
+      & h3 {
+        margin-bottom: 1rem;
+      }
+
+      & input,
+      textarea {
+        border: 0;
+        border-radius: 3px;
+        margin: 0.5rem 0;
+        padding: 1rem;
+        outline: none;
+        background: $white;
+        font-size: 1rem;
+        font-family: inherit;
+      }
+
+      & button {
+        background: transparent;
+        color: $white;
+        border: 1px solid $white;
+        border-radius: 3px;
+        letter-spacing: 3px;
+        cursor: pointer;
+        padding: 0.7rem 1.5rem;
+        margin: 2rem auto;
+        width: 12rem;
+        text-transform: uppercase;
+
+        &:hover {
+          transform: scale(1.1);
+          transition: transform 0.3s ease;
+        }
+      }
+    }
+  }
+
+  & .contact-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+
+    & h2 {
+      margin: 2rem 0;
+    }
+
+    & h3 {
+      margin: 1rem 0;
+    }
+
+    & .social-media {
+      @include flexCenter();
+      width: 40%;
+
+      & a {
+        color: $secondary-color;
+        margin: 1rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+footer {
+  bottom: 0;
+  width: 100vw;
+  height: 15vh;
+  background: rgba($primary-color, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & .social-media {
+    @include flexCenter();
+    width: 40%;
+
+    & a {
+      color: $secondary-color;
+      margin: 1rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  & .footer-desc {
+    margin: 1rem;
+  }
 }

@@ -75,7 +75,7 @@
               </div>
               <div class="buttons">
                 <button><a href="/Nav/knife1.html"> DETAILS </a></button>
-                <button>CONTACT</button>
+                <button><a href="#contact">CONTACT</a></button>
               </div>
             </div>
           </div>
@@ -227,18 +227,21 @@
             </div>
 
             <div class="about-details">
-              <h3>
-                <h2>Hello, I'm <strong>Zsolt Marta</strong></h2>
+              <h2>Hello, I'm <strong>Zsolt Marta</strong></h2>
 
-                <br />
-                <h2 class="about-title">
-                  Everybody should use a handmade custom knife
-                </h2>
-                <br />
-                -Why me?<br />
-                -How i help clients , benefits what i provide<br />
-                - testimonials (visszajelzések) <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+              <br />
+              <h2 class="about-title">
+                Everybody should use a handmade custom knife
+              </h2>
+              <br />
+              <h3>
+                I strarted bladesmithing in 2019, because I like blades since
+                childhood, like most of us. Im also like make tools (" need a
+                tool, make a tool" :)), like my 50x2000mm (2x72') belt grinder,
+                a rolling mill, what helps me a lot to stretch the steel, my
+                electric heat-threating oven and of course my two burner gas
+                forge. I make hunter knives mostly with leather or kydex sheet,
+                but sometimes i forge kitchen knives also.
               </h3>
 
               <div class="social-media">
@@ -259,13 +262,60 @@
     </section>
 
     <section class="contact" id="contact">
-      <div class="contact-container">
-        <h2>Contact</h2>
+      <img src="/Images/map-bg.jpg" alt="" />
+      <div class="email-container">
+        <form onsubmit="sendEmail()" ; reset(); return false>
+          <h3>Write me if you interested.</h3>
+          <input type="text" id="name" placeholder="Your name" required />
+          <input type="email" id="email" placeholder="Email adress" required />
+          <input type="text" id="phone" placeholder="Phone Number" required />
+          <textarea
+            id="message"
+            rows="6"
+            placeholder="Write me if I can help you."
+          ></textarea>
+          <button type="submit">Send Email</button>
+        </form>
       </div>
 
-      <div class="email-container"></div>
+      <div class="contact-container">
+        <h2>Contact Us</h2>
+        <h3>Adress: Szeged, Hungary</h3>
+        <h3>Phone: +3630 738 5472</h3>
+        <h3>Email: taticsa89@gmail.com</h3>
+
+        <div class="social-media">
+          <a
+            href="https://www.facebook.com/Ferreus-Knives-100491429314660/?notif_id=1657719841697463&notif_t=page_user_activity&ref=notif"
+            ><i class="fa-brands fa-facebook-square"></i
+          ></a>
+          <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
     </section>
 
-    <script src="Script/script.js"></script>
+    <footer>
+      <div class="social-media">
+        <div class="social-media">
+          <a
+            href="https://www.facebook.com/Ferreus-Knives-100491429314660/?notif_id=1657719841697463&notif_t=page_user_activity&ref=notif"
+            ><i class="fa-brands fa-facebook-square"></i
+          ></a>
+          <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-desc">
+        <h3>
+          <i class="fa-sharp fa-regular fa-copyright"></i> Established in 2019,
+          Hungary
+        </h3>
+      </div>
+    </footer>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="/Script/script.js"></script>
+    <script src="/Script/email.js"></script>
   </body>
 </html>
