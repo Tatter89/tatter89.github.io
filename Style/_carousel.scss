@@ -9,15 +9,6 @@
   box-shadow: 5px 5px 10px 10px $text-black-color;
   border-radius: 5px;
   transform: translateX(-8px);
-
-  /* @media (prefers-reduced-motion: no-preference) {
-    scale: 0.8;
-    opacity: 0;
-    animation: fade-in linear forwards;
-    animation-timeline: view();
-    animation-range-start: cover;
-    animation-range-end: 700px;
-  } */
 }
 .carousel .list .item {
   width: 100%;

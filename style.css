@@ -264,14 +264,6 @@
   border-radius: 5px;
   -webkit-transform: translateX(-8px);
           transform: translateX(-8px);
-  /* @media (prefers-reduced-motion: no-preference) {
-    scale: 0.8;
-    opacity: 0;
-    animation: fade-in linear forwards;
-    animation-timeline: view();
-    animation-range-start: cover;
-    animation-range-end: 700px;
-  } */
 }
 
 .carousel .list .item {
@@ -808,7 +800,6 @@ body {
   font-style: normal;
   letter-spacing: 0.5px;
   color: #e18023;
-  min-height: 100vh;
   overflow-x: hidden;
   /* background-image: linear-gradient(0deg, $primary-color, $primary-color),
     url(/Images/bcgound.jpg);
@@ -1068,7 +1059,7 @@ section {
           justify-content: center;
   width: 80vw;
   height: 90vh;
-  margin-top: 5rem;
+  margin: 7rem auto;
   -webkit-box-shadow: 5px 5px 10px 10px #161616;
           box-shadow: 5px 5px 10px 10px #161616;
   border-radius: 5px;
