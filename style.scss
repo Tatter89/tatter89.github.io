@@ -90,6 +90,35 @@ section {
   }
 }
 
+.main-buttons {
+  background: transparent;
+  color: $white;
+  border: 1px solid $white;
+  font-family: Poppins;
+  font-weight: 500;
+  border-radius: 3px;
+  letter-spacing: 3px;
+  cursor: pointer;
+  padding: 0.7rem 1.5rem;
+  margin: 2rem auto;
+  width: 12rem;
+  text-transform: uppercase;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.social-media {
+  margin: 1rem 1rem;
+  & a {
+    color: $secondary-color;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
 #hero {
   /* @media (max-width: $lg) {
     flex-direction: column;
@@ -103,7 +132,11 @@ section {
   & .hero-content {
     animation: fade-out linear;
     animation-timeline: view();
-    animation-range: exit -300px;
+    animation-range: exit -200px;
+
+    & button {
+      margin: 1rem;
+    }
 
     & h1,
     h2,
@@ -120,22 +153,6 @@ section {
       font-style: normal;
       line-height: 1.3em;
       text-transform: uppercase;
-    }
-
-    & button {
-      background: transparent;
-      color: $white;
-      border: 1px solid $white;
-      border-radius: 3px;
-      letter-spacing: 3px;
-      cursor: pointer;
-      padding: 0.7rem 1.5rem;
-      margin-top: 1rem;
-
-      &:hover {
-        transform: scale(1.1);
-        transition: transform 0.3s ease;
-      }
     }
   }
 
@@ -173,14 +190,7 @@ section {
 .about {
   position: relative;
   min-height: 100vh;
-  & .social-media {
-    margin: 2rem 0;
-    & a {
-      color: $secondary-color;
-      margin-right: 1rem;
-      font-size: 1.5rem;
-    }
-  }
+  @include flexCenter();
 
   & .about-main {
     width: 100%;
@@ -252,21 +262,6 @@ section {
         z-index: -1;
       }
     }
-    & button {
-      background: transparent;
-      color: $white;
-      border: 1px solid $white;
-      border-radius: 3px;
-      letter-spacing: 3px;
-      cursor: pointer;
-      padding: 0.7rem 1.5rem;
-      margin: 1rem;
-
-      &:hover {
-        transform: scale(1.1);
-        transition: transform 0.3s ease;
-      }
-    }
   }
 }
 
@@ -320,24 +315,6 @@ section {
         font-size: 1rem;
         font-family: inherit;
       }
-
-      & button {
-        background: transparent;
-        color: $white;
-        border: 1px solid $white;
-        border-radius: 3px;
-        letter-spacing: 3px;
-        cursor: pointer;
-        padding: 0.7rem 1.5rem;
-        margin: 2rem auto;
-        width: 12rem;
-        text-transform: uppercase;
-
-        &:hover {
-          transform: scale(1.1);
-          transition: transform 0.3s ease;
-        }
-      }
     }
   }
 
@@ -353,41 +330,23 @@ section {
     & h3 {
       margin: 1rem 0;
     }
-
-    & .social-media {
-      @include flexCenter();
-      width: 40%;
-
-      & a {
-        color: $secondary-color;
-        margin: 1rem;
-        font-size: 1.5rem;
-      }
-    }
   }
 }
 
 footer {
   bottom: 0;
   width: 100vw;
-  height: 15vh;
+  height: 100%;
   background: rgba($primary-color, 0.9);
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  & .social-media {
-    @include flexCenter();
-    width: 40%;
-
-    & a {
-      color: $secondary-color;
-      margin: 1rem;
-      font-size: 1.5rem;
-    }
-  }
-
   & .footer-desc {
     margin: 1rem;
+  }
+
+  & .social-media {
+    margin-bottom: 0;
   }
 }
