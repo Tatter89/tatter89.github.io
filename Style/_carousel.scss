@@ -9,71 +9,84 @@
   box-shadow: 5px 5px 10px 10px $text-black-color;
   border-radius: 5px;
   transform: translateX(-8px);
-}
-.carousel .list .item {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  inset: 0 0 0 0;
-}
-.carousel .list .item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.carousel .list .item .content {
-  position: absolute;
-  top: 10%;
-  width: 1140px;
-  max-width: 30%;
-  left: 20%;
-  padding: 1rem 2rem;
-  border-radius: 5px;
-  transform: translateX(-50%);
-  box-sizing: border-box;
-  color: rgb(238, 238, 238);
-  /* background-color: $primary-color; */
-}
-.carousel .list .item .title,
-.carousel .list .item .topic {
-  font-family: "Oswald", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 3em;
-  font-weight: bold;
-  line-height: 1.3em;
-  text-transform: uppercase;
-}
-.carousel .list .item .topic {
-  color: $secondary-color;
-}
-.carousel .list .item .buttons {
-  display: grid;
-  grid-template-columns: repeat(2, 130px);
-  grid-template-rows: 40px;
-  gap: 5px;
-  margin-top: 20px;
-}
-.carousel .list .item .buttons button {
-  & a {
-    color: $text-black-color;
-    text-decoration: none;
-  }
-  border: none;
-  background-color: #eee;
-  letter-spacing: 3px;
-  font-family: Poppins;
-  font-weight: 500;
-}
-.carousel .list .item .buttons button:nth-child(2) {
-  background-color: transparent;
-  border: 1px solid #fff;
 
-  & a {
-    color: $white;
+  & .list {
+    & .item {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0 0 0 0;
+
+      &:nth-child(1) {
+        z-index: 1;
+      }
+
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      & .content {
+        position: absolute;
+        top: 10%;
+        width: 1140px;
+        max-width: 30%;
+        left: 20%;
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        transform: translateX(-50%);
+        box-sizing: border-box;
+        color: rgb(238, 238, 238);
+      }
+
+      & .title,
+      .topic {
+        font-family: "Oswald", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 3em;
+        font-weight: bold;
+        line-height: 1.3em;
+        text-transform: uppercase;
+      }
+      & .topic {
+        color: $secondary-color;
+      }
+
+      & .buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 130px);
+        grid-template-rows: 40px;
+        gap: 5px;
+        margin-top: 20px;
+
+        & button {
+          & a {
+            color: $text-black-color;
+            text-decoration: none;
+          }
+          border: none;
+          background-color: #eee;
+          letter-spacing: 3px;
+          font-family: Poppins;
+          font-weight: 500;
+
+          &:nth-child(2) {
+            background-color: transparent;
+            border: 1px solid #fff;
+
+            & a {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
   }
 }
+
 /* thumbail */
 .thumbnail {
   position: absolute;
@@ -83,33 +96,38 @@
   z-index: 100;
   display: flex;
   gap: 20px;
+
+  & .item {
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+      box-shadow: 3px 3px 3px $text-black-color;
+    }
+
+    & .content {
+      color: #fff;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+
+      & .title {
+        font-weight: 500;
+      }
+      & .description {
+        font-weight: 300;
+      }
+    }
+  }
 }
-.thumbnail .item {
-  width: 150px;
-  height: 220px;
-  flex-shrink: 0;
-  position: relative;
-}
-.thumbnail .item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 5px;
-  box-shadow: 3px 3px 3px $text-black-color;
-}
-.thumbnail .item .content {
-  color: #fff;
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
-}
-.thumbnail .item .content .title {
-  font-weight: 500;
-}
-.thumbnail .item .content .description {
-  font-weight: 300;
-}
+
 /* arrows */
 .arrows {
   position: absolute;
@@ -121,29 +139,27 @@
   display: flex;
   gap: 10px;
   align-items: center;
-}
-.arrows button {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #eee4;
-  border: none;
-  color: #fff;
-  font-family: monospace;
-  font-weight: bold;
-  transition: 0.5s;
-}
-.arrows button:hover {
-  background-color: #fff;
-  color: #000;
+
+  & button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #eee4;
+    border: none;
+    color: #fff;
+    font-family: monospace;
+    font-weight: bold;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: #fff;
+      color: #000;
+      cursor: pointer;
+    }
+  }
 }
 
 /* animation */
-.carousel .list .item:nth-child(1) {
-  z-index: 1;
-}
-
-/* animation text in first item */
 
 .carousel .list .item:nth-child(1) .content .author,
 .carousel .list .item:nth-child(1) .content .title,
