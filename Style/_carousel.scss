@@ -4,6 +4,7 @@
   width: 80vw;
   height: 90vh;
   margin-top: 5px;
+  margin: auto;
   overflow: hidden;
   position: relative;
   box-shadow: 5px 5px 10px 10px $text-black-color;
@@ -38,6 +39,10 @@
         transform: translateX(-50%);
         box-sizing: border-box;
         color: rgb(238, 238, 238);
+
+        @media (max-width: $md) {
+          font-size: 0.8rem;
+        }
       }
 
       & .title,
@@ -53,6 +58,10 @@
       }
       & .topic {
         color: $secondary-color;
+
+        @media (max-width: $md) {
+          font-size: 2rem;
+        }
       }
 
       & .buttons {
@@ -103,6 +112,11 @@
     flex-shrink: 0;
     position: relative;
 
+    @media (max-width: $md) {
+      width: 120px;
+      height: 170px;
+    }
+
     & img {
       width: 100%;
       height: 100%;
@@ -124,6 +138,15 @@
       & .description {
         font-weight: 300;
       }
+
+      @media (max-width: $md) {
+        & .title {
+          display: none;
+        }
+        & .description {
+          display: none;
+        }
+      }
     }
   }
 }
@@ -144,15 +167,16 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #eee4;
+    background-color: rgba($secondary-color, 0.6);
     border: none;
-    color: #fff;
+    color: $text-black-color;
+    font-size: 1.2rem;
     font-family: monospace;
     font-weight: bold;
     transition: 0.5s;
 
     &:hover {
-      background-color: #fff;
+      background-color: $secondary-color;
       color: #000;
       cursor: pointer;
     }
@@ -161,36 +185,40 @@
 
 /* animation */
 
-.carousel .list .item:nth-child(1) .content .author,
-.carousel .list .item:nth-child(1) .content .title,
-.carousel .list .item:nth-child(1) .content .topic,
-.carousel .list .item:nth-child(1) .content .des,
-.carousel .list .item:nth-child(1) .content .buttons {
-  transform: translateY(50px);
-  filter: blur(20px);
-  opacity: 0;
-  animation: showContent 0.5s 1s linear 1 forwards;
-  background: none;
-}
-@keyframes showContent {
-  to {
-    transform: translateY(0px);
-    filter: blur(0px);
-    opacity: 1;
+.carousel {
+  & .list {
+    & .item {
+      &:nth-child(1) {
+        & .content {
+          & .title,
+          .topic,
+          .des,
+          .buttons {
+            transform: translateY(50px);
+            filter: blur(20px);
+            opacity: 0;
+            animation: showContent 0.5s 1s linear 1 forwards;
+            background: none;
+          }
+
+          & .title {
+            animation-delay: 1.2s !important;
+          }
+          & .topic {
+            animation-delay: 1.4s !important;
+          }
+          & .des {
+            animation-delay: 1.6s !important;
+          }
+          & .buttons {
+            animation-delay: 1.8s !important;
+          }
+        }
+      }
+    }
   }
 }
-.carousel .list .item:nth-child(1) .content .title {
-  animation-delay: 1.2s !important;
-}
-.carousel .list .item:nth-child(1) .content .topic {
-  animation-delay: 1.4s !important;
-}
-.carousel .list .item:nth-child(1) .content .des {
-  animation-delay: 1.6s !important;
-}
-.carousel .list .item:nth-child(1) .content .buttons {
-  animation-delay: 1.8s !important;
-}
+
 /* create animation when next click */
 .carousel.next .list .item:nth-child(1) img {
   width: 150px;
@@ -201,15 +229,6 @@
   border-radius: 30px;
   animation: showImage 0.5s linear 1 forwards;
 }
-@keyframes showImage {
-  to {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-  }
-}
 
 .carousel.next .thumbnail .item:nth-last-child(1) {
   overflow: hidden;
@@ -218,23 +237,10 @@
 .carousel.prev .list .item img {
   z-index: 100;
 }
-@keyframes showThumbnail {
-  from {
-    width: 0;
-    opacity: 0;
-  }
-}
+
 .carousel.next .thumbnail {
   animation: effectNext 0.5s linear 1 forwards;
 }
-
-@keyframes effectNext {
-  from {
-    transform: translateX(150px);
-  }
-}
-
-/* running time */
 
 /* prev click */
 
@@ -247,15 +253,6 @@
   position: absolute;
   bottom: 0;
   left: 0;
-}
-@keyframes outFrame {
-  to {
-    width: 150px;
-    height: 220px;
-    bottom: 50px;
-    left: 50%;
-    border-radius: 20px;
-  }
 }
 
 .carousel.prev .thumbnail .item:nth-child(1) {
@@ -275,13 +272,6 @@
   animation: contentOut 1.5s linear 1 forwards !important;
 }
 
-@keyframes contentOut {
-  to {
-    transform: translateY(-150px);
-    filter: blur(20px);
-    opacity: 0;
-  }
-}
 @media screen and (max-width: 678px) {
   .carousel .list .item .content {
     padding-right: 0;

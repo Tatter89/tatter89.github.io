@@ -31,6 +31,13 @@ h2 {
   font-weight: bold;
   line-height: 1.3em;
   text-transform: uppercase;
+
+  @media (max-width: $xxl) {
+    font-size: 2rem;
+  }
+  @media (max-width: $md) {
+    font-size: 1.2rem;
+  }
 }
 
 h3 {
@@ -39,9 +46,17 @@ h3 {
   font-weight: 400;
   font-style: normal;
   font-size: 1.5rem;
+
+  @media (max-width: $xxl) {
+    font-size: 1.3rem;
+  }
+  @media (max-width: $md) {
+    font-size: 0.8rem;
+  }
 }
 
 body {
+  width: 100vw;
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -69,23 +84,14 @@ body {
 // Sections
 
 section {
-  /* min-height: 100vh;
-  width: 100vw; */
+  min-height: 100vh;
+  width: 100vw;
   padding: 3.3rem 10%;
   padding-top: 5rem;
   margin: 5rem auto;
 
-  @media (max-width: 992px) {
+  @media (max-width: $lg) {
     padding: 1.3rem 5%;
-  }
-}
-
-@supports (animation-timeline: view()) {
-  .hero-bg {
-    transform-origin: top;
-    animation: header-image-animation linear forwards;
-    animation-timeline: view();
-    animation-range: exit;
   }
 }
 
@@ -118,20 +124,42 @@ section {
   }
 }
 
+@supports (animation-timeline: view()) {
+  .hero-bg {
+    transform-origin: top;
+    animation: header-image-animation linear forwards;
+    animation-timeline: view();
+    animation-range: exit;
+
+    @media (max-width: $lg) {
+      animation: none;
+    }
+  }
+}
+
 #hero {
   /* @media (max-width: $lg) {
     flex-direction: column;
     padding-top: 8rem;
   } */
-  width: 100vw;
+  max-width: 100vw;
   margin-top: 0;
   min-height: 100vh;
   @include flexCenter();
+
+  @media (max-width: $lg) {
+    flex-direction: column;
+  }
 
   & .hero-content {
     animation: fade-out linear;
     animation-timeline: view();
     animation-range: exit -200px;
+
+    @media (max-width: $lg) {
+      flex-direction: column;
+      animation: none;
+    }
 
     & button {
       margin: 1rem;
@@ -145,7 +173,7 @@ section {
     }
 
     & h1 {
-      font-size: 7rem;
+      font-size: 6rem;
       font-family: "Oswald", sans-serif;
       font-optical-sizing: auto;
       font-weight: 500;
@@ -153,26 +181,43 @@ section {
       line-height: 1.3em;
       text-transform: uppercase;
     }
+
+    @media (max-width: $xxl) {
+      & h1 {
+        font-size: 5rem;
+      }
+    }
   }
 
   & .hero-bg {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     z-index: -100;
     position: absolute;
     left: 0;
     top: 0;
     opacity: 0.7;
+
+    @media (max-width: $lg) {
+      object-fit: cover;
+    }
   }
 
   & .hero-logo {
+    @include flexCenter();
     img {
       transform: translate(6rem, 1rem);
-      width: 40vw;
+      width: 35rem;
       z-index: 3;
+      margin: -5rem;
+      margin-right: 7rem;
       animation: fade-out linear;
       animation-timeline: view();
       animation-range: exit -100px;
+
+      @media (max-width: $xxl) {
+        width: 25rem;
+      }
     }
   }
 }
@@ -239,6 +284,10 @@ section {
           font-style: normal;
           letter-spacing: 1px;
           font-size: 3rem;
+
+          @media (max-width: $xxl) {
+            font-size: 2rem;
+          }
         }
       }
 
@@ -246,6 +295,10 @@ section {
         & img {
           width: 25vw;
           margin: 2rem;
+
+          @media (max-width: $md) {
+            display: none;
+          }
         }
       }
     }
@@ -267,12 +320,17 @@ section {
 #contact {
   @include flexCenter();
   width: 80vw;
-  height: 90vh;
+  min-height: 90vh;
   margin: 7rem auto;
   box-shadow: 5px 5px 10px 10px $text-black-color;
   border-radius: 5px;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: $md) {
+    flex-direction: column-reverse;
+    width: 80vw;
+  }
 
   & img {
     position: absolute;
@@ -284,7 +342,7 @@ section {
 
   & .email-container,
   .contact-container {
-    width: 50%;
+    width: 100%;
     height: 100%;
     background: rgba($primary-color, 0.7);
     display: flex;
