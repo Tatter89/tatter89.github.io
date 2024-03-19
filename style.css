@@ -400,7 +400,8 @@
 
 @media (max-width: 768px) {
   .carousel .list .item .content {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 500;
   }
 }
 
@@ -840,7 +841,8 @@ h3 {
 
 @media (max-width: 768px) {
   h3 {
-    font-size: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
   }
 }
 
@@ -972,6 +974,8 @@ section {
             flex-direction: column;
     -webkit-animation: none;
             animation: none;
+    background: rgba(22, 22, 22, 0.5);
+    padding: 1rem 2rem;
   }
 }
 
@@ -1010,12 +1014,15 @@ section {
   left: 0;
   top: 0;
   opacity: 0.7;
+  overflow-x: hidden;
 }
 
 @media (max-width: 992px) {
   #hero .hero-bg {
     -o-object-fit: cover;
        object-fit: cover;
+    -webkit-box-shadow: 15px 15px 15px #161616;
+            box-shadow: 15px 15px 15px #161616;
   }
 }
 
@@ -1126,6 +1133,12 @@ section {
 
 .about .about-main .about-desc .about-details .about-title {
   font-size: 1.7rem;
+}
+
+@media (max-width: 1200px) {
+  .about .about-main .about-desc .about-details h2 {
+    font-size: 2rem;
+  }
 }
 
 .about .about-main .about-desc .about-details h3 {
