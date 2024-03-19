@@ -41,6 +41,11 @@
       color: $white;
       transition: all 0.4s ease;
 
+      @media (max-width: $md) {
+        font-size: 0.6rem;
+        font-weight: 500;
+      }
+
       & h2 {
         color: $secondary-color;
         font-family: "Oswald", sans-serif;
@@ -55,6 +60,11 @@
       & p {
         font-size: 1.3rem;
         margin-top: 0.5rem;
+
+        @media (max-width: $md) {
+          font-size: 0.8rem;
+          font-weight: 500;
+        }
       }
     }
 
