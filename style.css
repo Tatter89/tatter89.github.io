@@ -1021,8 +1021,8 @@ section {
   #hero .hero-bg {
     -o-object-fit: cover;
        object-fit: cover;
-    -webkit-box-shadow: 15px 15px 15px #161616;
-            box-shadow: 15px 15px 15px #161616;
+    -webkit-box-shadow: 0px 15px 15px #161616;
+            box-shadow: 0px 15px 15px #161616;
   }
 }
 
