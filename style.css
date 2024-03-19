@@ -405,6 +405,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .carousel .list .item .content .des {
+    max-height: 20vh;
+  }
+}
+
 .carousel .list .item .title,
 .carousel .list .item .topic {
   font-family: "Oswald", sans-serif;
@@ -485,8 +491,8 @@
 
 @media (max-width: 768px) {
   .thumbnail .item {
-    width: 120px;
-    height: 170px;
+    width: 80px;
+    height: 100px;
   }
 }
 
