@@ -1,11 +1,18 @@
+/* .detail-slider-container {
+  width: 100%;
+  margin-right: 20vw;
+} */
+
 .detail-slider {
   background-color: rgb(39, 39, 39);
-  width: 100%;
   min-height: 100vh;
+  /* min-width: 100vw; */
+  width: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
+  padding-right: 20vw;
 }
 
 .slider {
@@ -17,9 +24,9 @@
   width: fit-content;
 
   & .slide {
-    width: 50vw;
+    width: 40vw;
     height: 80vh;
-    margin: 0 5vw;
+    margin: 0 2vw;
     position: relative;
     transition: all 0.7s ease;
     box-shadow: 5px 5px 10px 10px $text-black-color;
@@ -96,4 +103,8 @@
       }
     }
   }
+}
+
+#slide-blank {
+  opacity: 0;
 }
