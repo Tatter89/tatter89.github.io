@@ -383,6 +383,18 @@
      object-fit: cover;
 }
 
+@media (max-aspect-ratio: 3 / 4) {
+  .carousel .list .item img {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    height: 100%;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    margin-left: -50vw;
+  }
+}
+
 .carousel .list .item .content {
   position: absolute;
   top: 10%;
@@ -816,10 +828,12 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100vw;
 }
 
 * {
   margin: 0;
+  margin-right: -20px;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -900,7 +914,7 @@ body {
 }
 
 section {
-  min-height: 100vh;
+  min-height: auto;
   width: 100vw;
   padding: 3.3rem 10%;
   padding-top: 5rem;

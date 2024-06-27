@@ -28,6 +28,17 @@
         object-fit: cover;
       }
 
+      @media (max-aspect-ratio: 3/4) {
+        img {
+          transform: rotate(90deg);
+          height: 100%;
+          width: max-content;
+          margin-left: -50vw;
+        }
+      }
+      @media (min-aspect-ratio: 4/3) {
+      }
+
       & .content {
         position: absolute;
         top: 10%;
